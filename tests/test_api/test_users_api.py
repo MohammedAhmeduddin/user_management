@@ -234,3 +234,18 @@ async def test_create_user_missing_required_field(async_client, admin_token):
     assert response.status_code == 422  # Unprocessable Entity
     assert "detail" in response.json()
 
+@pytest.mark.asyncio
+async def test_update_user_email_access_Not_allowed_test2(async_client, admin_user, verified_user, admin_token):
+    updated_data = {"email": f"updated_{admin_user.id}@example.com"}
+    headers = {"Authorization": f"Bearer {admin_token}"}
+    response = await async_client.put(f"/users/{admin_user.id}", json=updated_data, headers=headers)
+    response = await async_client.put(f"/users/{verified_user.id}", json=updated_data, headers=headers)
+    assert "email already exist" in response.json().get("detail", "")
+
+@pytest.mark.asyncio
+async def test_update_user_email_access_allowed_test3(async_client, admin_user, verified_user, admin_token):
+    updated_data = {"email": f"updated_{admin_user.id}@example.com"}
+    headers = {"Authorization": f"Bearer {admin_token}"}
+    response = await async_client.put(f"/users/{admin_user.id}", json=updated_data, headers=headers)
+    response = await async_client.put(f"/users/{admin_user.id}", json=updated_data, headers=headers)
+    assert response.status_code == 200
