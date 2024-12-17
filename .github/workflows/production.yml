@@ -57,7 +57,7 @@ jobs:
   build-and-push-docker:
     needs: test
     runs-on: ubuntu-latest
-    environment: production
+    environment: env
     steps:
       - uses: actions/checkout@v4
       

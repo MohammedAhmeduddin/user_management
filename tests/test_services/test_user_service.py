@@ -186,3 +186,31 @@ async def test_reset_password_non_existent_user(db_session):
     reset_success = await UserService.reset_password(db_session, non_existent_user_id, "NewPassword123!")
     assert reset_success is False, "Password reset should fail for a non-existent user"
 
+
+async def test_create_user_with_valid_data_test6(db_session, email_service):
+    user_data = {
+        "nickname": generate_nickname(),
+        "email": "valid_user2@example.com",
+        "password": "ValidPassword123!",
+        "role": UserRole.ADMIN.name
+    }
+    user = await UserService.create(db_session, user_data, email_service)
+    assert user is not None
+    assert user.role == UserRole.ADMIN
+async def test_create_user_with_valid_data_test7(db_session, email_service):
+    user_data = {
+        "nickname": generate_nickname(),
+        "email": "valid_user3@example.com",
+        "password": "ValidPassword123!",
+        "role": UserRole.AUTHENTICATED.name
+    }
+    user_data1 = {
+        "nickname": generate_nickname(),
+        "email": "valid_user5@example.com",
+        "password": "ValidPassword123!",
+        "role": UserRole.AUTHENTICATED.name
+    }
+    user = await UserService.create(db_session, user_data, email_service)
+    user1 = await UserService.create(db_session, user_data1, email_service)
+    assert user1 is not None
+    assert user1.role == UserRole.ANONYMOUS

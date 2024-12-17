@@ -250,6 +250,7 @@ async def test_update_user_email_access_allowed_test3(async_client, admin_user, 
     response = await async_client.put(f"/users/{admin_user.id}", json=updated_data, headers=headers)
     assert response.status_code == 200
 
+
 @pytest.mark.asyncio
 async def test_create_user_sns_test4(async_client, verified_user):
     user_data = {
