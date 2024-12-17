@@ -34,3 +34,6 @@ async def test_send_account_locked_email(email_service):
     await email_service.send_account_locked_email(user)
     # Verify email delivery or mock behavior
 
+async def test_send_professional_email_test10(email_service):
+    email= "test@example.com"
+    await email_service.send_professional_upgrade_email(email)
