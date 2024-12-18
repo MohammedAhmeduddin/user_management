@@ -49,10 +49,6 @@ Enhance user profile management by enabling users to update profile fields such 
 link of the commit: https://github.com/kaw393939/user_management/commit/ccf4947d8f2df8d6784ef6b313ddc1061bf30a32
 
 
-Here’s a combined version of both pieces of content, integrating all the insights cohesively:
-
----
-
 **What I Learned**
 
 This assignment provided a substantial opportunity to enhance my technical expertise in secure software development and system reliability. Implementing features such as enforcing password complexity requirements (e.g., minimum length, special characters, and case sensitivity) demonstrated the importance of adhering to security best practices in user authentication. Refactoring the JWT service to include structured error handling and explicit algorithm specifications improved the system's robustness and security, ensuring secure and reliable token management. Addressing issues like duplicate login routes and nickname mismatches in user creation highlighted the value of database integrity and efficient query design to maintain consistency and scalability in multi-user environments.
