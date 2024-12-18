@@ -1,7 +1,7 @@
 
 # User Management Project
 
-There are 31 extra test cases compare to the basecode.  Each branch has test cases to test the necessary changes. Can verified through in commits. 
+There are 31 extra test cases compare to the basecode.  Each branch has test cases to test the necessary changes. Can verified through commits. 
 
 
 
