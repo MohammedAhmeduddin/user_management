@@ -1,53 +1,68 @@
 
+# User Management Project
 
-# The User Management System Final Project: Your Epic Coding Adventure Awaits! 🎉✨🔥
+There are 31 extra test cases compare to the basecode.  Each branch has test cases to test the necessary changes. Can verified through in commits. 
 
-## Introduction: Buckle Up for the Ride of a Lifetime 🚀🎬
 
-Welcome to the User Management System project - an epic open-source adventure crafted by the legendary Professor Keith Williams for his rockstar students at NJIT! 🏫👨‍🏫⭐ This project is your gateway to coding glory, providing a bulletproof foundation for a user management system that will blow your mind! 🤯 You'll bridge the gap between the realms of seasoned software pros and aspiring student developers like yourselves. 
 
-### [Instructor Video - Project Overview and Tips](https://youtu.be/gairLNAp6mA) 🎥
+## Issue resolved:
 
-- [Introduction to the system features and overview of the project - please read](system_documentation.md) 📚
-- [Project Setup Instructions](setup.md) ⚒️
-- [Features to Select From](features.md) 🛠️
-- [About the Project](about.md)🔥🌟
+1. **exceptions logs are missing**: Addressed the absence of exception logs in user routes by integrating logging functionality. This ensures that all exceptions are captured and logged, improving traceability, debugging, and monitoring of user-related operations.
 
-## Goals and Objectives: Unlock Your Coding Superpowers 🎯🏆🌟
+link to the issue: https://github.com/MohammedAhmeduddin/user_management/tree/11-exceptions-logs-are-missing-in-user-routes
 
-Get ready to ascend to new heights with this legendary project:
 
-1. **Practical Experience**: Dive headfirst into a real-world codebase, collaborate with your teammates, and contribute to an open-source project like a seasoned pro! 💻👩‍💻🔥
-2. **Quality Assurance**: Develop ninja-level skills in identifying and resolving bugs, ensuring your code quality and reliability are out of this world. 🐞🔍⚡
-3. **Test Coverage**: Write additional tests to cover edge cases, error scenarios, and important functionalities - leave no stone unturned and no bug left behind! ✅🧪🕵️‍♂️
-4. **Feature Implementation**: Implement a brand new, mind-blowing feature and make your epic mark on the project, following best practices for coding, testing, and documentation like a true artisan. ✨🚀🎆
-5. **Collaboration**: Foster teamwork and collaboration through code reviews, issue tracking, and adhering to contribution guidelines - teamwork makes the dream work, and together you'll conquer worlds! 🤝💪🌍
-6. **Industry Readiness**: Prepare for the software industry by working on a project that simulates real-world development scenarios - level up your skills to super hero status  and become an unstoppable coding force! 🔝🚀🏆⚡
+2. **remove duplicate login endpoint**: Simplified the user route by removing the redundant login endpoint, ensuring there is only a single login route. This change reduces redundancy, improves maintainability, and prevents potential inconsistencies in login logic.
 
-## Submission and Grading: Your Chance to Shine 📝✏️📈
+link to the issue: https://github.com/MohammedAhmeduddin/user_management/tree/9-duplicate-login-endpoint
 
-1. **Reflection Document**: Submit a 1-2 page Word document reflecting on your learnings throughout the course and your experience working on this epic project. Include links to the closed issues for the **5 QA issues, 10 NEW tests, and 1 Feature** you'll be graded on. Make sure your project successfully deploys to DockerHub and include a link to your Docker repository in the document - let your work speak for itself! 📄🔗💥
 
-2. **Commit History**: Show off your consistent hard work through your commit history like a true coding warrior. **Projects with less than 10 commits will get an automatic 0 - ouch!** 😬⚠️ A significant part of your project's evaluation will be based on your use of issues, commits, and following a professional development process like a boss - prove your coding prowess! 💻🔄🔥
+3. **Added logging Functionality and improved error handling in email service**: The refactored code enhances the original by incorporating detailed logging and robust error handling to improve monitoring and debugging. Logging is added at key stages, such as service initialization, email template rendering, and sending, providing visibility into operations. It logs specific details like email type and recipient, making it easier to track actions and diagnose issues. Error handling is strengthened with `try-except` blocks to catch and log failures during template rendering or email sending, ensuring clear error messages with contextual information. These changes make the service more reliable, maintainable, and transparent for developers.
 
-3. **Deployability**: Broken projects that don't deploy to Dockerhub or pass all the automated tests on GitHub actions will face point deductions - nobody likes a buggy app! 🐞☠️ Show the world your flawless coding skills!
+link to the issue: https://github.com/MohammedAhmeduddin/user_management/tree/3-lack-of-error-handling-and-no-logging-in-email-service
 
-## Managing the Project Workload: Stay Focused, Stay Victorious ⏱️🧠⚡
 
-This project requires effective time management and a well-planned strategy, but fear not - you've got this! Follow these steps to ensure a successful (and sane!) project outcome:
+4. **password validation contraints**: The refactored code adds **password validation** to enforce strong security requirements, ensuring passwords contain uppercase, lowercase, special characters, and numbers with min password length 8 characters. It also includes detailed logging for monitoring key operations and robust error handling to log and manage failures during email rendering or sending. These updates enhance security, reliability, and maintainability.
 
-1. **Select a Feature**: [Choose a feature](features.md) from the provided list of additional improvements that sparks your interest and aligns with your goals like a laser beam. ✨⭐🎯 This is your chance to shine!
+link to the issue: https://github.com/MohammedAhmeduddin/user_management/tree/5-password-validation-constraints
 
-2. **Quality Assurance (QA)**: Thoroughly test the system's major functionalities related to your chosen feature and identify at least 5 issues or bugs like a true detective. Create GitHub issues for each identified problem, providing detailed descriptions and steps to reproduce - the more detail, the merrier! 🔍🐞🕵️‍♀️ Leave no stone unturned!
+5. **Verify Email missing UUID**
+Cause: Email was being sent before the user got added to the DB. Fix: Mail was made to sent after the user was added to the DB.
 
-3. **Test Coverage Improvement**: Review the existing test suite and identify gaps in test coverage like a pro. Create 10 additional tests to cover edge cases, error scenarios, and important functionalities related to your chosen feature. Focus on areas such as user registration, login, authorization, and database interactions. Simulate the setup of the system as the admin user, then creating users, and updating user accounts - leave no stone unturned, no bug left behind! ✅🧪🔍🔬 Become the master of testing!
+link to the issue: https://github.com/MohammedAhmeduddin/user_management/tree/7-email-missing-uuid
 
-4. **New Feature Implementation**: Implement your chosen feature, following the project's coding practices and architecture like a coding ninja. Write appropriate tests to ensure your new feature is functional and reliable like a rock. Document the new feature, including its usage, configuration, and any necessary migrations - future you will thank you profusely! 🚀✨📝👩‍💻⚡ Make your mark on this project!
 
-5. **Maintain a Working Main Branch**: Throughout the project, ensure you always have a working main branch deploying to Docker like a well-oiled machine. This will prevent any last-minute headaches and ensure a smooth submission process - no tears allowed, only triumphs! 😊🚢⚓ Stay focused, stay victorious!
+6. **GitHub and linkedin url are null in create user** : rCause: GitHub URL and LinkedIn URL are null in the response of the create user. Fix: Values are being correctly mapped to response object.
+link to the issue: https://github.com/MohammedAhmeduddin/user_management/tree/13-github-and-linked-url-are-null-in-create-user
 
-Remember, it's more important to make something work reliably and be reasonably complete than to implement an overly complex feature. Focus on creating a feature that you can build upon or demonstrate in an interview setting - show off your skills like a rockstar! 💪🚀🎓
 
-Don't forget to always have a working main branch deploying to Docker at all times. If you always have a working main branch, you will never be in jeopardy of receiving a very disappointing grade :-). Keep that main branch shining bright!
 
-Let's embark on this epic coding adventure together and conquer the world of software engineering! You've got this, coding rockstars! 🚀🌟✨
+7. **Refactored jwt Service**: The code was refactored to improve **readability**, **functionality**, and **maintainability**. Detailed **docstrings** were added for better documentation. The `decode_token` function now includes error handling to safely manage invalid tokens. Logic was simplified for clarity, and explicit algorithm specifications enhance security. These changes make the code more robust, user-friendly, and easier to maintain or extend.
+link to the issue: https://github.com/MohammedAhmeduddin/user_management/tree/1-lack-of-error-handling-in-token-decoding-no-token-refresh-mechanism-no-expiration-check-in-jwt-service
+
+
+
+# Added feature User Profile Management:
+Enhance user profile management by enabling users to update profile fields such as name, bio, and location, and allowing managers or admins to upgrade users to professional status. This involves creating API endpoints for profile updates and professional status upgrades, updating the profile page to display professional status and editable fields, and sending notifications upon status upgrades. Optional improvements include field validation, dynamic field addition, and a user-friendly interface for managers/admins. The implementation requires reviewing the existing codebase, designing APIs, updating the database schema, developing the necessary functionality, refining the UI, and writing unit tests to ensure reliability.
+
+
+link of the commit: https://github.com/kaw393939/user_management/commit/ccf4947d8f2df8d6784ef6b313ddc1061bf30a32
+
+
+Here’s a combined version of both pieces of content, integrating all the insights cohesively:
+
+---
+
+**What I Learned**
+
+This assignment provided a substantial opportunity to enhance my technical expertise in secure software development and system reliability. Implementing features such as enforcing password complexity requirements (e.g., minimum length, special characters, and case sensitivity) demonstrated the importance of adhering to security best practices in user authentication. Refactoring the JWT service to include structured error handling and explicit algorithm specifications improved the system's robustness and security, ensuring secure and reliable token management. Addressing issues like duplicate login routes and nickname mismatches in user creation highlighted the value of database integrity and efficient query design to maintain consistency and scalability in multi-user environments.
+
+The integration of detailed logging across various services, including user routes and email services, underscored the importance of observability in modern applications. By adding logging at critical execution points and during exception handling, the system now offers better traceability, simplifies debugging processes, and improves monitoring. Refactoring and modularizing these components reinforced the importance of maintainable and extensible code, which is essential for managing large, collaborative codebases effectively. Additionally, working with unique constraints in the database, especially for nicknames, emphasized the necessity of dynamically validating inputs to avoid runtime conflicts.
+
+Through this project, I also gained hands-on experience in collaborative development workflows, including issue tracking, branching strategies, and version control best practices. Isolating changes for each task and maintaining comprehensive documentation helped achieve consistency and scalability while adhering to software development standards. Adding 31 extra test cases strengthened my understanding of comprehensive testing, ensuring the reliability and accuracy of the newly implemented features and bug fixes.
+
+Ultimately, this project deepened my knowledge of designing secure, maintainable, and reliable systems while addressing practical challenges in real-world development scenarios. It reinforced critical lessons in debugging, implementing robust logging and error-handling mechanisms, and enhancing application security. This experience also showcased the value of clean, maintainable code, dynamic validation, and thoughtful system architecture in building scalable, production-grade software.
+
+
+
+
